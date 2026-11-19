@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "mcpServers": {
+    "credit-guard": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./mcp-server.mjs"],
+      "description": "macOS 积分限额守护：查询、修复、启用与安全停用。",
+      "timeout": 35000
+    }
+  }
+}

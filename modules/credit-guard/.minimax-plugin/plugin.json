@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "name": "credit-guard",
+  "displayName": "积分限额",
+  "version": "1.0.2",
+  "description": "为 macOS 上的会话设置积分限额，由本地守护统计消耗并安全暂停、恢复会话；提供状态查询和启停工具。",
+  "author": "MCode Local Enhancements contributors",
+  "category": "Productivity",
+  "exampleQueries": [
+    "查看积分限额守护状态",
+    "启用积分限额",
+    "修复积分限额显示",
+    "停用积分限额"
+  ],
+  "apps": [],
+  "mcpServers": [
+    "guard.mcp.json"
+  ],
+  "skills": [],
+  "agents": [],
+  "hooks": [
+    "hooks/hooks.json"
+  ]
+}

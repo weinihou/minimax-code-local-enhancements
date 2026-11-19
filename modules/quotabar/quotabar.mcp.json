@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "mcpServers": {
+    "quotabar": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./src/mcp-server.mjs"],
+      "description": "查询、修复、启停 MiniMax Code 桌面端侧边栏的 5 小时限额条（quotabar）。",
+      "timeout": 30000
+    }
+  }
+}

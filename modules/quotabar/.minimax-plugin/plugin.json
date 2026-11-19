@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "name": "quotabar",
+  "displayName": "侧边栏限额条（5h 额度 + 积分 + 重置卡）",
+  "version": "1.1.0",
+  "description": "在 MiniMax Code 桌面端侧边栏底部常驻 5 小时限额进度条，悬停显示剩余额度、重置时间、积分与可用重置卡。提供 MCP 工具查询/修复/启停；APP 更新导致限额条消失时，巡检会在会话空闲时自动带调试端口重启恢复。",
+  "author": "MCode Local Enhancements contributors",
+  "category": "Code",
+  "exampleQueries": [
+    "侧边栏限额条没了，帮我看看并修好",
+    "我现在 5 小时限额还剩多少、积分多少",
+    "重置卡还剩几张能用",
+    "把限额条的常驻守护装上，以后自动恢复"
+  ],
+  "apps": [],
+  "mcpServers": [
+    "quotabar.mcp.json"
+  ],
+  "skills": [],
+  "hooks": [
+    "hooks/hooks.json"
+  ]
+}
