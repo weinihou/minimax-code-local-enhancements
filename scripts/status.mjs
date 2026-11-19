@@ -43,7 +43,7 @@ async function moduleStatus(spec) {
   return result;
 }
 async function debugStatus() {
-  const port = Number(process.env.MCODE_DEBUG_PORT || 9333);
+  const port = Number(process.env.MINIMAX_CODE_DEBUG_PORT || 9333);
   if (!Number.isInteger(port) || port < 1 || port > 65535) return { reachable: false, error: 'invalid-port' };
   try {
     const response = await fetch(`http://127.0.0.1:${port}/json/list`, { signal: AbortSignal.timeout(3000), redirect: 'error' });

@@ -17,7 +17,7 @@ function parse(argv) {
   }
   return { positional, flags };
 }
-const HELP = `MCode 本地增强 0.2.0
+const HELP = `MiniMax Code 本地增强 0.2.0
 
 npm run manage -- install [--icon FILE --dark-icon FILE] [--apply]
 npm run manage -- migrate [--icon FILE --dark-icon FILE] [--apply]

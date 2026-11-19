@@ -1,9 +1,9 @@
 {
-  "name": "mcode-local-enhancements",
+  "name": "minimax-code-local-enhancements",
   "version": "0.2.0",
   "private": true,
   "license": "0BSD",
-  "description": "MCode 本地增强：统一安装、离线迁移与独立模块控制",
+  "description": "MiniMax Code 本地增强：统一安装、离线迁移与独立模块控制",
   "type": "module",
   "engines": { "node": ">=24" },
   "scripts": {

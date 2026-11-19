@@ -7,7 +7,7 @@ import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 
-export const NAME = 'mcode-local-enhancements';
+export const NAME = 'minimax-code-local-enhancements';
 export const VERSION = '0.2.0';
 const repository = fileURLToPath(new URL('../', import.meta.url));
 const exec = promisify(execFile);
@@ -65,7 +65,7 @@ async function liveSafety() {
     try { await exec('/bin/launchctl', ['list', label], { timeout: 2000 }); registeredLabels.push(label); }
     catch (error) { if (error.code !== 113) throw Error('Cannot prove launchd job absent: ' + label); }
   }
-  const runningWorkers = stdout.split('\n').filter(line => /\/(?:credit-guard\/daemon\.mjs|quotabar\/(?:src\/)?(?:daemon\.sh|injector\.mjs)|mcode-local-enhancements\/runtime\/supervisor\.mjs)(?:\s|$)/.test(line)).length;
+  const runningWorkers = stdout.split('\n').filter(line => /\/(?:credit-guard\/daemon\.mjs|quotabar\/(?:src\/)?(?:daemon\.sh|injector\.mjs)|minimax-code-local-enhancements\/runtime\/supervisor\.mjs)(?:\s|$)/.test(line)).length;
   return { appRunning, registeredLabels, runningWorkers };
 }
 async function checkIcons(options) {
@@ -160,13 +160,13 @@ export function createInstaller({ sourceRoot = repository, safety = liveSafety }
     await copy(options.icon, join(target, icon));
     if (darkIcon) await copy(options.darkIcon, join(target, darkIcon));
     await jsonWrite(join(target, '.minimax-plugin/plugin.json'), {
-      schemaVersion: 1, name: NAME, displayName: 'MCode 本地增强', version: VERSION,
+      schemaVersion: 1, name: NAME, displayName: 'MiniMax Code 本地增强', version: VERSION,
       description: '统一管理用量条和会话积分限额；模块独立启停，后台常驻、自启动、自动重启均需主动授权。',
-      author: 'MCode Local Enhancements contributors', icon, ...(darkIcon ? { darkIcon } : {}), category: 'Code',
+      author: 'MiniMax Code Local Enhancements contributors', icon, ...(darkIcon ? { darkIcon } : {}), category: 'Code',
       exampleQueries: ['查看本地增强状态', '只启用用量条', '停用积分限额并撤销后台启动'],
       apps: [], mcpServers: ['enhancements.mcp.json'], skills: [], agents: [], hooks: [],
     });
-    await jsonWrite(join(target, 'enhancements.mcp.json'), { schemaVersion: 1, mcpServers: { 'mcode-local-enhancements': {
+    await jsonWrite(join(target, 'enhancements.mcp.json'), { schemaVersion: 1, mcpServers: { 'minimax-code-local-enhancements': {
       type: 'stdio', command: 'node', args: ['./runtime/mcp-server.mjs'], env: { MINIMAX_DATA_DIR: dataDir },
       description: '本地增强的状态、显式权限选择和独立模块启停；默认不启动后台。', timeout: 120000,
     } } });

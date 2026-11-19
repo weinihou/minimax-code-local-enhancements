@@ -33,11 +33,11 @@ npm run manage -- install --data-dir /path/to/profile --icon /path/to/icon.png -
 
 应用必须关闭，旧、新相关 launchd 作业必须都已撤销登记；安装器不会帮你退出应用或停作业。若目录存在旧插件，普通 install 拒绝，改用 migrate 预览。`--data-dir` 省略时从 `MINIMAX_DATA_DIR` 或当前用户 `.minimax` 定位，实际部署前先看预览。
 
-生成的插件位于 `<dataDir>/plugins/mcode-local-enhancements`，只声明一个 MCP server，不声明 Hook；不会复制旧模块 MCP、旧巡检、旧自动重启 shell 或旧安装器。安装本身不启动模块、不注册 LaunchAgent、不修改信用积分状态文件。客户端下一次启动会扫描新插件；本轮未在生产客户端验证扫描识别。
+生成的插件位于 `<dataDir>/plugins/minimax-code-local-enhancements`，只声明一个 MCP server，不声明 Hook；不会复制旧模块 MCP、旧巡检、旧自动重启 shell 或旧安装器。安装本身不启动模块、不注册 LaunchAgent、不修改信用积分状态文件。客户端下一次启动会扫描新插件；本轮未在生产客户端验证扫描识别。
 
 ## 独立启停
 
-启动积分限额前，确认 MCode 设置里的「使用积分」已开启，其说明为「开启后，可以在对话中消耗你的积分（含赠予积分）」。守护依靠积分余额下降来计量消耗；该选项关闭时余额不下降，限额不会触发。
+启动积分限额前，确认 MiniMax Code 设置里的「使用积分」已开启，其说明为「开启后，可以在对话中消耗你的积分（含赠予积分）」。守护依靠积分余额下降来计量消耗；该选项关闭时余额不下降，限额不会触发。
 
 显式选择用量条的后台权限，然后启动：
 

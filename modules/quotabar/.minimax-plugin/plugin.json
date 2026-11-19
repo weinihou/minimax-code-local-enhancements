@@ -4,7 +4,7 @@
   "displayName": "侧边栏限额条（5h 额度 + 积分 + 重置卡）",
   "version": "1.1.0",
   "description": "在 MiniMax Code 桌面端侧边栏底部常驻 5 小时限额进度条，悬停显示剩余额度、重置时间、积分与可用重置卡。提供 MCP 工具查询/修复/启停；APP 更新导致限额条消失时，巡检会在会话空闲时自动带调试端口重启恢复。",
-  "author": "MCode Local Enhancements contributors",
+  "author": "MiniMax Code Local Enhancements contributors",
   "category": "Code",
   "exampleQueries": [
     "侧边栏限额条没了，帮我看看并修好",

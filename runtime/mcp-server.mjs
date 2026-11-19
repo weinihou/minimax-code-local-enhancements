@@ -21,7 +21,7 @@ async function handle(message) {
   const { id, method, params } = message;
   if (id === undefined) return;
   const reply = result => send({ jsonrpc: '2.0', id, result });
-  if (method === 'initialize') return reply({ protocolVersion: '2024-11-05', serverInfo: { name: 'mcode-local-enhancements', version: '0.2.0' }, capabilities: { tools: {} } });
+  if (method === 'initialize') return reply({ protocolVersion: '2024-11-05', serverInfo: { name: 'minimax-code-local-enhancements', version: '0.2.0' }, capabilities: { tools: {} } });
   if (method === 'ping') return reply({});
   if (method === 'tools/list') return reply({ tools });
   if (method !== 'tools/call') return send({ jsonrpc: '2.0', id, error: { code: -32601, message: 'Method not found' } });
@@ -35,7 +35,7 @@ async function handle(message) {
     if (params.name !== 'enhancements_status' && !moduleSchema.enum.includes(args.module)) throw Error('Invalid module');
     if (params.name !== 'enhancements_status') {
       const manifest = JSON.parse(await readFile(join(pluginRoot, '.minimax-plugin/plugin.json'), 'utf8'));
-      if (manifest.name !== 'mcode-local-enhancements') throw Error('Unified installation required');
+      if (manifest.name !== 'minimax-code-local-enhancements') throw Error('Unified installation required');
       for (const legacy of ['quotabar', 'credit-guard']) {
         let present;
         try { present = !!await lstat(join(dataDir, 'plugins', legacy)); }

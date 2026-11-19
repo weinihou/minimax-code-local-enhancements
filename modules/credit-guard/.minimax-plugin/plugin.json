@@ -4,7 +4,7 @@
   "displayName": "积分限额",
   "version": "1.0.2",
   "description": "为 macOS 上的会话设置积分限额，由本地守护统计消耗并安全暂停、恢复会话；提供状态查询和启停工具。",
-  "author": "MCode Local Enhancements contributors",
+  "author": "MiniMax Code Local Enhancements contributors",
   "category": "Productivity",
   "exampleQueries": [
     "查看积分限额守护状态",
